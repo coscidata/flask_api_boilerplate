@@ -11,12 +11,10 @@ SQLALCHEMY_POOL_SIZE = 100
 SQLALCHEMY_POOL_TIMEOUT = 10
 SQLALCHEMY_POOL_RECYCLE = 2000
 SQLALCHEMY_TRACK_MODIFICATIONS = True
-SQLALCHEMY_DATABASE_URI = getenv(
-    'SQLALCHEMY_DATABASE_URI',
-    default='mysql+pymysql://root:@localhost:3306/app?charset=utf8mb4')
+SQLALCHEMY_DATABASE_URI = getenv('SQLALCHEMY_DATABASE_URI')
 
 # secret key
-SECRET_KEY = getenv('SECRET_KEY', default='testsecretkey')
+SECRET_KEY = getenv('SECRET_KEY')
 
 # redis cache
 # REDIS_URL = getenv('REDIS_URL', default='redis://localhost:6379/0')

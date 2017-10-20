@@ -38,7 +38,7 @@ cp seattle/local_config.py.template seattle/local_config.py
 运行
 
 ```shell
-python app.py
+python run.py
 ```
 
 ### 格式化代码
