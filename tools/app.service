@@ -1,0 +1,17 @@
+# cp `pwd`/app.service /etc/systemd/system/
+[Unit]
+Description=Seattle
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/data/app
+ExecStart=/bin/gunicorn run:app -c gunicorn_http_config.py
+LimitNOFILE=10485760
+LimitNPROC=10485760
+LimitCORE=infinity
+MountFlags=slave
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
